@@ -1,0 +1,19 @@
+# SPDX-License-Identifier: GPL-2.0
+config KERNEL_IRQ_TEST
+	tristate "Kernel IRQ test driver"
+	help
+	  Say Y here to enable Kernel IRQ test driver.
+
+config SAMPLE_IRQ
+    tristate "SAMPLE_IRQ Support"
+    depends on KERNEL_IRQ_TEST
+    help
+      This option enables support for My Module.
+      If DEPENDENT_OPTION is not enabled, this option will not be available.
+
+config ATK_IRQ
+    tristate "ATK_IRQ Support"
+    depends on KERNEL_IRQ_TEST
+    help
+      This option enables support for ATK Module.
+      If DEPENDENT_OPTION is not enabled, this option will not be available.

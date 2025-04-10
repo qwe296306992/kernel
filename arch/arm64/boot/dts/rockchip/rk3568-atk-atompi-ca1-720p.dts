@@ -1,0 +1,30 @@
+#include "rk3568-atk-atompi-ca1.dts"
+
+&backlight {
+	status = "okay";
+};
+
+&dsi0 {
+	status = "okay";
+};
+
+&dsi0_panel {
+	status = "okay";
+};
+
+&dsi0_in_vp1 {
+	status = "okay";
+};
+
+&route_dsi0 {
+	connect = <&vp1_out_dsi0>;
+	status = "okay";
+};
+
+&video_phy0 {
+	status = "okay";
+};
+
+&dsi_touch {
+	status = "okay";
+};

@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: GPL-2.0
+menuconfig YS_TEST
+	bool "YSkinder Test sample"
+	help
+	  Yskinder Test code.
+
+if YS_TEST
+
+menu "Kernel prompt test sample"
+source drivers/test/prompt_test/Kconfig
+endmenu
+
+menu "Kernel workqueue test sample"
+source drivers/test/work_queue/Kconfig
+endmenu
+
+menu "Kernel irq test sample"
+source drivers/test/irq/Kconfig
+endmenu
+
+endif # YS_TEST

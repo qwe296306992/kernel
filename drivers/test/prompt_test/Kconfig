@@ -1,0 +1,5 @@
+# SPDX-License-Identifier: GPL-2.0
+config KERNEL_PROMPT_TEST
+	tristate "Kernel preemption test driver"
+	help
+	  Say Y here to enable Kernel preemption test driver.

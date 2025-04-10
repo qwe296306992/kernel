@@ -1,0 +1,5 @@
+# SPDX-License-Identifier: GPL-2.0
+config KERNEL_WORKQUEUE_TEST
+	tristate "Kernel WORKQUEUE test driver"
+	help
+	  Say Y here to enable Kernel WORKQUEUE test driver.
