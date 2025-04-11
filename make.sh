@@ -47,20 +47,5 @@ while [ $# -gt 0 ]; do
 	esac
 done
 
-# 配置
-#make ARCH=$RK_ARCH $RK_DEFCONFIG $RK_DEFCONFIG_FRAGMENT
-# 编译
+make ARCH=$RK_ARCH $RK_DEFCONFIG $RK_DEFCONFIG_FRAGMENT
 bear -- make ARCH=$RK_ARCH $RK_DTS.img -j$RK_JOBS
-# 编译出720p和1080p MIPI屏设备树镜像
-echo "#################################################"
-make ARCH=$RK_ARCH rockchip/rk3568-atk-evb1-ddr4-v10-linux.dtb -j$RK_JOBS
-make ARCH=$RK_ARCH rockchip/rk3568-atk-evb1-mipi-dsi-1080p.dtb -j$RK_JOBS
-make ARCH=$RK_ARCH rockchip/rk3568-atk-evb1-mipi-dsi-720p.dtb -j$RK_JOBS
-make ARCH=$RK_ARCH rockchip/rk3568-atk-evb1-mipi-dsi-10p1_800x1280.dtb -j$RK_JOBS
-make ARCH=$RK_ARCH rockchip/rk3568-atk-atompi-ca1.dtb -j$RK_JOBS
-make ARCH=$RK_ARCH rockchip/rk3568-atk-atompi-ca1-720p.dtb -j$RK_JOBS
-make ARCH=$RK_ARCH rockchip/rk3568-atk-atompi-ca1-1080p.dtb -j$RK_JOBS
-make ARCH=$RK_ARCH rockchip/rk3568-atk-atompi-ca1-10p1_800x1280.dtb -j$RK_JOBS
-# 生成包含多个dtb的resource.img镜像
-rm -rf resource.img
-python2 scripts/mkmultidtb.py RK3568-ATK-EVB1
